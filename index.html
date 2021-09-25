@@ -1,33 +1,49 @@
-<html>
-    <head>
-        <title>.:Cadastro pessoal:.</title>
-    </head>
-    <body>
-        <div id="cabecalho"><h1>Cadastro pessoal</h1></div>        
-        Nome Completo <br>
-        <input type="text" name="nome" placeholder="Digite o nome">
-        CPF <br>
-        <input type="text" name="cpf" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" placeholder="Digite o CPF">
-        RG <br>
-        <input type="text" name="cpf" placeholder="Digite o RG">
-        Sexo <br>
-        <input type="text" name="cpf" placeholder="Selecione o sexo">
-        Endereço <br>
-        <input type="text" name="endereco" placeholder="Digite o endereço">
-        Número <br>
-        <input type="text" name="numero" placeholder="Digite o endereço">
-        Bairro <br>
-        <input type="text" name="bairro" placeholder="Digite o endereço">
-        Cidade <br>
-        <input type="text" name="cidade" placeholder="Digite o endereço">
-        Estado <br>
-        <input type="text" name="estado" placeholder="Digite o endereço">
-        CEP <br>
-        <input type="text" name="cep" placeholder="Digite o endereço">
-        Telefone Fixo <br>
-        <input type="text" name="telefone_fixo" placeholder="Digite o endereço">
-        Celular <br>
-        <input type="text" name="celular" placeholder="Digite o endereço">
-        <button>Enviar</button>
-    </body>
+<!DOCTYPE html>
+
+<head>
+    <title>.:Cadastro pessoal:.</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="registrationForm">
+        <h1>Formulário de Cadastro Pessoal</h1>
+    </div>
+
+    <div class="content">
+        <form>
+            <div id="name">
+                <h2 class="name">Nome e Sobrenome *</h2>
+                <label class="firstLabel">nome</label>
+                <input class="firstName" type="text" name="firstName">
+                <label class="lastNameLabel">Sobrenome</label>
+                <input class="lastName" type="text" name="lastName">
+            </div>
+
+            <h2 class="name">Telefone com DDD *</h2>
+            <input class="code" type="text" name="areaCode">
+            <label class="areaCode">DDD</label>
+            <input class="number" type="text" name="phone">
+            <label class="phoneNumber">Telefone</label>
+
+            <h2 class="name">Celular com DDD *</h2>
+            <input class="code" type="text" name="areaCodeCellphone">
+            <label class="areaCode">DDD</label>
+            <input class="number" type="text" name="cellphone">
+            <label class="phoneNumber">Celular</label>
+
+            <h2 class="nome">Sexo</h2>
+            <select class="opcoes" name="assunto">
+                <option disabled="disabled" selected="selected">--Selecione a opção</option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+            </select>
+        </form>
+    </div>
+
+
+
+
+</body>
+
 </html>
