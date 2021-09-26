@@ -46,7 +46,7 @@ class Validator {
         let errorMessage = 'O campo precisa ter pelo menos &{minValue} caracteres';
 
         if(inputLength < minValue){
-            console.log(errorMessage);
+            this.printMessage(input, errorMessage);
         }
 
     }
@@ -57,7 +57,11 @@ class Validator {
 
         template.textContent = msg;
 
-        let inputParent
+        let inputParent = input.parentNode;
+
+        template.classList.remove('twmplate');
+
+        inputParent.appendChild(template);
     }
 }
 
@@ -73,6 +77,7 @@ let validator = new Validator();
 submit.addEventListener('click', function(e) {
 
 e.preventDefault();
+console.log('funcionou');
 
 validator.validate(form);
 
