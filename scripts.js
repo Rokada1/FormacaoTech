@@ -12,7 +12,6 @@ class Validator {
         //pegar os inputs
         let inputs = form.getElementsByTagName('input');
 
-
         //HTML Collection -> array
         let inputsArray = [...inputs];
 
@@ -28,27 +27,22 @@ class Validator {
                     let method = this.validations[i].replace('data-', '').replace('-', '');
 
                     //valor do input
-                    let value= input.getAttribute(this.validations[i])
+                    let value = input.getAttribute(this.validations[i]);
 
                     //invocar o método
                     this[method](input, value);
-
                 }
             }
-
         },this);
     }
     //verifica se um input tem um número mínimo de caracteres
-    minLength(input, minValue) {
-
+    minlength(input, minValue) {
         let inputLength = input.value.length;
-
-        let errorMessage = 'O campo precisa ter pelo menos &{minValue} caracteres';
+        let errorMessage = 'O campo precisa ter pelo menos ${minValue} caracteres';
 
         if(inputLength < minValue){
             this.printMessage(input, errorMessage);
         }
-
     }
 
     //método para imprimir mensagens de erro na tela
@@ -59,14 +53,11 @@ class Validator {
 
         let inputParent = input.parentNode;
 
-        template.classList.remove('twmplate');
+        template.classList.remove('template');
 
         inputParent.appendChild(template);
     }
 }
-
-
-
 
 let form = document.getElementById("register-form");
 let submit = document.getElementById("btn-submit");
@@ -77,7 +68,6 @@ let validator = new Validator();
 submit.addEventListener('click', function(e) {
 
 e.preventDefault();
-console.log('funcionou');
 
 validator.validate(form);
 
