@@ -3,11 +3,19 @@ class Validator {
     constructor() {
         this.validations = [
             'data-min-length',
+            'data-required'
         ]
     }
 
     //iniciar a validação de todos os campos
     validate(form){
+
+        //resgata todas as validações
+        let currentValidations = document.querySelectorAll('form .error-validation');
+
+        if(currentValidations.length > 0) {
+            this.cleanValidations(currentValidations);
+        }
 
         //pegar os inputs
         let inputs = form.getElementsByTagName('input');
@@ -43,6 +51,7 @@ class Validator {
         if(inputLength < minValue){
             this.printMessage(input, errorMessage);
         }
+
     }
 
     //método para imprimir mensagens de erro na tela
@@ -57,6 +66,25 @@ class Validator {
 
         inputParent.appendChild(template);
     }
+
+    //verifica se o input é requerido
+    required(input){
+
+        let inputValue = input.value;
+
+        if(inputValue === ''){
+            let errorMessage = 'Este campo é obrigatório';
+
+            this.printMessage(input,errorMessage);
+        }
+    }
+
+    //limpa as validações da tela
+    cleanValidations(validations){
+        validations.forEach(el => el.remove());
+
+    }
+
 }
 
 let form = document.getElementById("register-form");

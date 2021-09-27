@@ -118,10 +118,10 @@ input[type="submit"]{
 }
 
 select{
-    width: auto;
+    width: 100%;
     position: relative;
     font-size: .8rem;
-    border-bottom: 2px solid #323232;
     padding: 10px;
     margin-bottom: 40px;
+    border-bottom: 2px solid #323232;
 }
